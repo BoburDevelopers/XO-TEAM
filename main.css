@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background: black;
+}
+.container{
+    width: 30vw;
+    height: 60vh;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+.box{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    /* transform: rotate(-90deg); */
+    transform-style: preserve-3d;
+    animation: anime 3s infinite ;
+    /* transform: rotateY(45deg) rotateZ(-90deg); */
+}
+@keyframes anime{
+    0%{
+        transform: rotateX(-30deg);
+    }
+    25%{
+        transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+    }
+    50%{
+        transform: rotateX(30deg) rotateY(180deg) rotateZ(-0deg);
+    }
+    75%{
+        transform: rotateX(0deg) rotateY(270deg) rotateZ(-0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg) rotateZ(-0deg);
+    }
+}
+.card{
+    height: 250px;
+    width: 250px;
+    text-align:center;
+    padding: 100px Opx;
+    color: white;
+    /* background: radial-gradient(rgba(174, 55, 55, 0.419), rgba(0, 0, 0, 0.655)); */
+    background-color: transparent;
+    border: 1px solid red;
+    font-size: 32px;
+    box-sizing: border-box;
+    position: absolute;
+    padding-top: 100px;
+    box-shadow: 0 0 30px -0px red;
+}
+.card {
+
+}
+#front{
+    transform: translateZ(125px);
+}
+#back{
+    transform: translateZ(-125px) rotateY(180deg);
+}
+#left{
+    right: 125px;
+    transform: rotateY(-90deg);
+}
+#right{
+    left: 125px;
+    transform: rotateY(90deg);
+}
+#top{
+    bottom: 125px;
+    transform: rotateX(90deg);
+}
+#bottom{
+    top: 125px;
+    transform: rotateX(-90deg);
+}
+
+span{
+    display: none;
+}
